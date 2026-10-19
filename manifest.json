@@ -1,0 +1,10 @@
+{
+    "name": "Daily Planner",
+    "short_name": "Planner",
+    "description": "My personal daily planner",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#050805",
+    "theme_color": "#39ff88",
+    "orientation": "portrait"
+}

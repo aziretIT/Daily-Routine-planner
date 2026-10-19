@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Daily Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ================================
+         SIDEBAR
+    ================================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h2>Planner</h2>
+
+                <span>
+                    My Daily Life
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active">
+
+                <span>📅</span>
+
+                Daily Routine
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="quote">
+
+                <p>
+                    "Small steps every day."
+                </p>
+
+                <span>
+                    — Your future self
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================
+         MAIN
+    ================================= -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="title-area">
+
+                <p class="small-title">
+                    TODAY
+                </p>
+
+                <h1>
+                    Daily Routine
+                </h1>
+
+                <p id="currentDate">
+                    Today
+                </p>
+
+            </div>
+
+
+
+            <!-- CALENDAR -->
+
+            <div class="calendar">
+
+                <div class="calendar-header">
+
+                    <button onclick="changeMonth(-1)">
+                        ‹
+                    </button>
+
+                    <h3 id="calendarMonth">
+                        October 2026
+                    </h3>
+
+                    <button onclick="changeMonth(1)">
+                        ›
+                    </button>
+
+                </div>
+
+
+                <div class="calendar-weekdays">
+
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+
+                </div>
+
+
+                <div
+                    id="calendarDays"
+                    class="calendar-days"
+                >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- OVERALL PROGRESS -->
+
+            <div class="overall-progress">
+
+                <span>
+                    Today's progress
+                </span>
+
+                <div class="progress-container">
+
+                    <div
+                        id="overallProgressBar"
+                    ></div>
+
+                </div>
+
+                <strong
+                    id="overallProgressText"
+                >
+                    0%
+                </strong>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================
+             DAILY ROUTINE
+        ================================= -->
+
+        <section>
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        My Day
+                    </h2>
+
+                    <p>
+                        Complete your daily routine
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="routine-grid">
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🌅
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Wake Up
+                        </h3>
+
+                        <p>
+                            07:00
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🕌
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Fajr
+                        </h3>
+
+                        <p>
+                            Morning prayer
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+                 <div class="routine-grid">
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🍽️
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Lunch
+                        </h3>
+
+                        <p>
+                            13:00-14:00
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🍳
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Breakfast
+                        </h3>
+
+                        <p>
+                            07:20 – 07:45
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🏫
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            School
+                        </h3>
+
+                        <p>
+                            08:00 – 16:00
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🕌
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Dhuhr
+                        </h3>
+
+                        <p>
+                            Prayer
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🕌
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Asr
+                        </h3>
+
+                        <p>
+                            Prayer
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🍽️
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Dinner
+                        </h3>
+
+                        <p>
+                            18:00 – 19:00
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🕌
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Maghrib
+                        </h3>
+
+                        <p>
+                            Prayer
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        🕌
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Isha
+                        </h3>
+
+                        <p>
+                            Prayer
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+
+
+                <div class="routine-card">
+
+                    <span class="routine-icon">
+                        😴
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Sleep
+                        </h3>
+
+                        <p>
+                            22:30 – 07:00
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        class="routine-check"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             STUDY CATEGORIES
+        ================================= -->
+
+        <section class="study-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        Today's Tasks
+                    </h2>
+
+                    <p>
+                        Choose what you want to work on
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="category-grid">
+
+
+                <!-- IELTS -->
+
+                <div
+                    class="category-card"
+                    onclick="openCategory('IELTS')"
+                >
+
+                    <div class="category-icon">
+                        🇬🇧
+                    </div>
+
+                    <div class="category-info">
+
+                        <h3>
+                            IELTS
+                        </h3>
+
+                        <p>
+                            English preparation
+                        </p>
+
+                        <span id="ieltsProgress">
+                            0 / 10 completed
+                        </span>
+
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+
+                <!-- SAT -->
+
+                <div
+                    class="category-card"
+                    onclick="openCategory('SAT')"
+                >
+
+                    <div class="category-icon">
+                        📐
+                    </div>
+
+                    <div class="category-info">
+
+                        <h3>
+                            SAT
+                        </h3>
+
+                        <p>
+                            Math & Reading/Writing
+                        </p>
+
+                        <span id="satProgress">
+                            0 / 7 completed
+                        </span>
+
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==========================
+                     ОРТ
+                =========================== -->
+
+                <div
+                    class="category-card ort-card"
+                    onclick="openCategory('ORT')"
+                >
+
+                    <div class="category-icon">
+                        📝
+                    </div>
+
+                    <div class="category-info">
+
+                        <h3>
+                            ОРТ
+                        </h3>
+
+                        <p>
+                            Кыргыз тили & Математика
+                        </p>
+
+                        <span id="ortProgress">
+                            0 / 8 completed
+                        </span>
+
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+
+                <!-- SCHOOL -->
+
+                <div
+                    class="category-card"
+                    onclick="openCategory('School')"
+                >
+
+                    <div class="category-icon">
+                        🏫
+                    </div>
+
+                    <div class="category-info">
+
+                        <h3>
+                            School
+                        </h3>
+
+                        <p>
+                            School homework
+                        </p>
+
+                        <span id="schoolProgress">
+                            0 / 6 completed
+                        </span>
+
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+
+                <!-- CODING -->
+
+                <div
+                    class="category-card"
+                    onclick="openCategory('Coding')"
+                >
+
+                    <div class="category-icon">
+                        💻
+                    </div>
+
+                    <div class="category-info">
+
+                        <h3>
+                            Coding
+                        </h3>
+
+                        <p>
+                            Programming & projects
+                        </p>
+
+                        <span id="codingProgress">
+                            0 / 6 completed
+                        </span>
+
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+
+                <!-- PERSONAL -->
+
+                <div
+                    class="category-card"
+                    onclick="openCategory('Personal')"
+                >
+
+                    <div class="category-icon">
+                        👤
+                    </div>
+
+                    <div class="category-info">
+
+                        <h3>
+                            Personal
+                        </h3>
+
+                        <p>
+                            Personal goals
+                        </p>
+
+                        <span id="personalProgress">
+                            0 / 6 completed
+                        </span>
+
+                    </div>
+
+                    <div class="arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- ================================
+     TASK MODAL
+================================= -->
+
+<div
+    id="taskModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+
+        <button
+            class="close-button"
+            onclick="closeCategory()"
+        >
+            ×
+        </button>
+
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="small-title">
+                    TODAY'S PLAN
+                </p>
+
+                <h2 id="modalTitle">
+                    IELTS
+                </h2>
+
+                <p id="modalDescription">
+                    Your tasks for today
+                </p>
+
+            </div>
+
+
+            <div class="modal-progress">
+
+                <strong id="modalProgress">
+                    0%
+                </strong>
+
+                <div class="modal-progress-bar">
+
+                    <div
+                        id="modalProgressFill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TASK LIST -->
+
+        <div
+            id="taskList"
+            class="task-list"
+        >
+        </div>
+
+
+
+        <!-- RESOURCES -->
+
+        <div class="resources-section">
+
+            <div class="resources-title">
+
+                <div>
+
+                    <h3>
+                        Useful Resources
+                    </h3>
+
+                    <p>
+                        Websites for your preparation
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="resourcesList"
+                class="resources-list"
+            >
+            </div>
+
+        </div>
+
+
+
+        <!-- ADD TASK -->
+
+        <div class="add-task">
+
+            <input
+                type="text"
+                id="newTask"
+                placeholder="Add your own task..."
+            >
+
+            <button onclick="addTask()">
+                + Add
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

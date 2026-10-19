@@ -1,0 +1,1374 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --bg: #050805;
+    --bg-soft: #081009;
+
+    --card: #0d140f;
+    --card-hover: #111b14;
+
+    --green: #39ff88;
+    --green-dark: #1eb85c;
+
+    --text: #f1fff5;
+    --text-soft: #9caf9f;
+    --text-dark: #6f7f72;
+
+    --border: rgba(57, 255, 136, 0.14);
+
+    --shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(57, 255, 136, 0.06),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+
+    display: flex;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+
+    width: 250px;
+
+    min-height: 100vh;
+
+    background:
+        rgba(7, 13, 8, 0.95);
+
+    border-right:
+        1px solid var(--border);
+
+    padding: 28px 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.logo-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: var(--green);
+
+    color: #061009;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 25px
+        rgba(57, 255, 136, 0.25);
+
+}
+
+
+.logo h2 {
+
+    font-size: 20px;
+
+}
+
+
+.logo span {
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+}
+
+
+.nav-item {
+
+    width: 100%;
+
+    border: none;
+
+    background:
+        rgba(57, 255, 136, 0.08);
+
+    color: var(--green);
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+}
+
+
+.nav-item span {
+
+    margin-right: 8px;
+
+}
+
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+}
+
+
+.quote {
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(57, 255, 136, 0.04);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.quote p {
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: var(--text-soft);
+
+}
+
+
+.quote span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--green);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.main {
+
+    flex: 1;
+
+    padding: 35px;
+
+    max-width: 1600px;
+
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.top-bar {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        330px
+        210px;
+
+    gap: 25px;
+
+    align-items: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.small-title {
+
+    color: var(--green);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+.title-area h1 {
+
+    font-size: 36px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.title-area > p:last-child {
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   CALENDAR
+========================================= */
+
+.calendar {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 17px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.calendar-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+
+}
+
+
+.calendar-header button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.calendar-header h3 {
+
+    font-size: 14px;
+
+    text-transform: capitalize;
+
+}
+
+
+.calendar-weekdays,
+.calendar-days {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 6px;
+
+    text-align: center;
+
+}
+
+
+.calendar-weekdays span {
+
+    color: var(--text-dark);
+
+    font-size: 10px;
+
+}
+
+
+.calendar-days {
+
+    margin-top: 10px;
+
+}
+
+
+.calendar-days span {
+
+    width: 30px;
+
+    height: 30px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+}
+
+
+.calendar-days span.today {
+
+    background: var(--green);
+
+    color: #061009;
+
+    font-weight: bold;
+
+}
+
+
+.calendar-empty {
+
+    visibility: hidden;
+
+}
+
+
+/* =========================================
+   OVERALL PROGRESS
+========================================= */
+
+.overall-progress {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+}
+
+
+.overall-progress > span {
+
+    display: block;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.progress-container {
+
+    width: 100%;
+
+    height: 7px;
+
+    background: #172019;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+#overallProgressBar {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: var(--green);
+
+    border-radius: 20px;
+
+    transition: width 0.3s ease;
+
+}
+
+
+.overall-progress strong {
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--green);
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+section {
+
+    margin-bottom: 45px;
+
+}
+
+
+.section-title {
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.section-title p {
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   ROUTINE
+========================================= */
+
+.routine-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 13px;
+
+}
+
+
+.routine-card {
+
+    min-height: 100px;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    transition:
+        transform 0.2s,
+        border 0.2s;
+
+}
+
+
+.routine-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(57, 255, 136, 0.35);
+
+}
+
+
+.routine-icon {
+
+    font-size: 25px;
+
+}
+
+
+.routine-card h3 {
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.routine-card p {
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+
+}
+
+
+.routine-check {
+
+    margin-left: auto;
+
+    width: 18px;
+
+    height: 18px;
+
+    accent-color: var(--green);
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   CATEGORIES
+========================================= */
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 17px;
+
+}
+
+
+.category-card {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s,
+        border 0.2s;
+
+}
+
+
+.category-card:hover {
+
+    transform: translateY(-4px);
+
+    background: var(--card-hover);
+
+    border-color:
+        rgba(57, 255, 136, 0.35);
+
+}
+
+
+.category-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(57, 255, 136, 0.08);
+
+    font-size: 25px;
+
+}
+
+
+.category-info {
+
+    flex: 1;
+
+}
+
+
+.category-info h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.category-info p {
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.category-info span {
+
+    color: var(--green);
+
+    font-size: 11px;
+
+}
+
+
+.arrow {
+
+    color: var(--green);
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================
+   ОРТ
+========================================= */
+
+.ort-card {
+
+    border-color:
+        rgba(57, 255, 136, 0.25);
+
+}
+
+
+.ort-card .category-icon {
+
+    background:
+        rgba(57, 255, 136, 0.12);
+
+}
+
+
+.ort-card h3 {
+
+    color: var(--green);
+
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+
+}
+
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+.modal-content {
+
+    width: 700px;
+
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #0a110c;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 28px;
+
+    position: relative;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0, 0, 0, 0.6);
+
+}
+
+
+.close-button {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 20px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+}
+
+
+.modal-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.modal-header h2 {
+
+    font-size: 28px;
+
+}
+
+
+.modal-header p:last-child {
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+.modal-progress {
+
+    width: 150px;
+
+}
+
+
+.modal-progress strong {
+
+    display: block;
+
+    color: var(--green);
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.modal-progress-bar {
+
+    height: 7px;
+
+    background: #172019;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+#modalProgressFill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--green);
+
+    transition: width 0.3s;
+
+}
+
+
+/* =========================================
+   TASKS
+========================================= */
+
+.task-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.task-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+}
+
+
+.task-item input {
+
+    width: 18px;
+
+    height: 18px;
+
+    accent-color: var(--green);
+
+    cursor: pointer;
+
+}
+
+
+.task-item span {
+
+    font-size: 13px;
+
+}
+
+
+.task-item.completed span {
+
+    text-decoration: line-through;
+
+    color: var(--text-dark);
+
+}
+
+
+/* =========================================
+   RESOURCES
+========================================= */
+
+.resources-section {
+
+    margin-top: 25px;
+
+}
+
+
+.resources-title h3 {
+
+    font-size: 17px;
+
+}
+
+
+.resources-title p {
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+
+}
+
+
+.resources-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.resource-card {
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    background:
+        rgba(57, 255, 136, 0.04);
+
+    border:
+        1px solid var(--border);
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.resource-icon {
+
+    font-size: 20px;
+
+}
+
+
+.resource-card h4 {
+
+    font-size: 12px;
+
+}
+
+
+.resource-card p {
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =========================================
+   ADD TASK
+========================================= */
+
+.add-task {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.add-task input {
+
+    flex: 1;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    outline: none;
+
+}
+
+
+.add-task input:focus {
+
+    border-color: var(--green);
+
+}
+
+
+.add-task button {
+
+    border: none;
+
+    background: var(--green);
+
+    color: #061009;
+
+    font-weight: bold;
+
+    padding: 0 18px;
+
+    border-radius: 11px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .top-bar {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+    .overall-progress {
+
+        grid-column: 1 / -1;
+
+    }
+
+    .routine-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        overflow-x: hidden;
+
+    }
+
+
+    .app {
+
+        display: block;
+
+    }
+
+
+    .sidebar {
+
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 13px 15px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+
+    .logo {
+
+        margin-bottom: 0;
+
+    }
+
+
+    .sidebar nav,
+    .sidebar-bottom {
+
+        display: none;
+
+    }
+
+
+    .main {
+
+        width: 100%;
+
+        padding: 20px 15px;
+
+    }
+
+
+    .top-bar {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        align-items: stretch;
+
+    }
+
+
+    .title-area h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .calendar {
+
+        width: 100%;
+
+    }
+
+
+    .overall-progress {
+
+        width: 100%;
+
+    }
+
+
+    .routine-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .category-card {
+
+        padding: 17px;
+
+    }
+
+
+    .modal {
+
+        padding: 0;
+
+    }
+
+
+    .modal-content {
+
+        width: 100%;
+
+        height: 100%;
+
+        max-height: 100vh;
+
+        border-radius: 0;
+
+        padding: 22px 17px;
+
+    }
+
+
+    .modal-header {
+
+        flex-direction: column;
+
+    }
+
+
+    .modal-progress {
+
+        width: 100%;
+
+    }
+
+
+    .resources-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .add-task {
+
+        flex-direction: column;
+
+    }
+
+
+    .add-task button {
+
+        height: 45px;
+
+    }
+
+}
